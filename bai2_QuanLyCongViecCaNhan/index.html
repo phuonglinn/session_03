@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản Lý Công Việc Cá Nhân</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Quản Lý Công Việc Cá Nhân</h1>
+
+        <div id="notification-area" class="notification hidden"></div>
+
+        <div class="header-actions">
+            <button id="btn-open-form">➕ Thêm công việc</button>
+            
+            <div class="statistics-area">
+                <div class="stat-box total">Tổng số: <span id="total-tasks">0</span></div>
+                <div class="stat-box completed">Đã xong: <span id="completed-tasks">0</span></div>
+                <div class="stat-box pending">Chưa xong: <span id="pending-tasks">0</span></div>
+            </div>
+        </div>
+
+        <div id="task-list" class="task-container">
+            </div>
+    </div>
+
+    <div id="form-modal" class="modal hidden">
+        <div class="modal-content">
+            <h2 id="form-title">Thêm Mới Công Việc</h2>
+            
+            <form id="task-form">
+                <div class="form-group">
+                    <label for="task-title">Tiêu đề công việc (*)</label>
+                    <input type="text" id="task-title" required placeholder="Ví dụ: Học Javascript nâng cao">
+                </div>
+                
+                <div class="form-group">
+                    <label for="task-desc">Mô tả ngắn</label>
+                    <input type="text" id="task-desc" placeholder="Nội dung tóm tắt công việc">
+                </div>
+                
+                <div class="form-group">
+                    <label for="task-deadline">Hạn hoàn thành (*)</label>
+                    <input type="date" id="task-deadline" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="task-priority">Mức ưu tiên (*)</label>
+                    <select id="task-priority">
+                        <option value="Cao">🔴 Cao</option>
+                        <option value="Trung bình" selected>🟡 Trung bình</option>
+                        <option value="Thấp">🟢 Thấp</option>
+                    </select>
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" id="btn-save">Lưu lại</button>
+                    <button type="button" id="btn-close-form">Đóng/Hủy</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
